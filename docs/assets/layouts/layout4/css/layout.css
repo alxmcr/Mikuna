@@ -66,7 +66,8 @@ Page Header
       display: block;
       float: left; }
     .page-header.navbar .page-logo .logo-default {
-      margin: 29px 10px 0 10px; }
+      width: 150px;
+      margin: 20px 10px 0 10px; }
     .page-header.navbar .page-logo .logo-mini {
       display: none;
       margin-left: 5px; }
@@ -1398,7 +1399,7 @@ Theme Panel
         font-weight: 300;
         padding-top: -4px; }
       .theme-panel .theme-colors > li.theme-color.theme-color-default .theme-color-view {
-        background: #3B3F51; }
+        background: #E8C600; }
       .theme-panel .theme-colors > li.theme-color.theme-color-light .theme-color-view {
         background: #cbced9; }
   .theme-panel .theme-settings {
