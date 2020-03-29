@@ -6,9 +6,9 @@ class listaItems extends Component {
         return (
             <div>
                 <Button variant="contained" color="primary">
-                primari
+                primario
                 </Button>
-                <Button variant="contained" color="segundary">
+                <Button variant="contained" color="secondary">
                 secondario
                 </Button>
             </div>
