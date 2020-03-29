@@ -1,6 +1,4 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
-import { common } from "@material-ui/core/colors";
 
 const theme = createMuiTheme(
     {
@@ -15,7 +13,7 @@ const theme = createMuiTheme(
                 whilte: "white"
             },
             secondary: {
-                main: "#e53935"
+                main: "#DF3E3E"
             }
         },
         spacing: 10
