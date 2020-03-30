@@ -7,6 +7,7 @@ import { Grid } from '@material-ui/core';
 import AppNavbar from './components/layout/appNavbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RegistrarUsuario from "./components/seguridad/RegistrarUsuario";
+import Login from "./components/seguridad/Login";
 
 class App extends Component {
   render() {
@@ -15,10 +16,11 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <AppNavbar></AppNavbar>
           <Grid container>
-            {/* <Switch>
+            <Switch>
               <Route path="/" exact component={ListaItems}></Route>
-            </Switch> */}
+            </Switch>
             <Route path="/auth/registrarUsuario" exact component={RegistrarUsuario}></Route>
+            <Route path="/auth/login" exact component={Login}></Route>
           </Grid>
         </MuiThemeProvider>
       </Router>
