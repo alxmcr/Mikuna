@@ -1,6 +1,6 @@
 import app from 'firebase/app';
-
-const firebaseConfig = {
+import 'firebase/firestore';
+const config = {
     apiKey: "AIzaSyCvc4szAps4sbLE55R4SaRjoZPzbMSFHKA",
     authDomain: "sipaceapp.firebaseapp.com",
     databaseURL: "https://sipaceapp.firebaseio.com",
@@ -13,8 +13,8 @@ const firebaseConfig = {
 
 class Firebase {
     constructor() {
-        app.initializeApp(firebaseConfig);
-        this.db = app.Firebase();
+        app.initializeApp(config);
+        this.db = app.firestore();
     }
 
 }
