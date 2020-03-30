@@ -25,12 +25,12 @@ const style = {
     }
 }
 
-const usuarioInicial = {
-    nombre: "",
-    apellido: "",
-    email: "",
-    password: ""
-}
+// const usuarioInicial = {
+//     nombre: "",
+//     apellido: "",
+//     email: "",
+//     password: ""
+// }
 
 class RegistrarUsuario extends Component {
     state = {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import './App.css';
 import ListaItems from './components/views/listaItems';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
@@ -8,25 +8,33 @@ import AppNavbar from './components/layout/appNavbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RegistrarUsuario from "./components/seguridad/RegistrarUsuario";
 import Login from "./components/seguridad/Login";
+import { FirebaseContext } from "./server";
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <MuiThemeProvider theme={theme}>
-          <AppNavbar></AppNavbar>
-          <Grid container>
-            <Switch>
-              <Route path="/" exact component={ListaItems}></Route>
-            </Switch>
-            <Route path="/auth/registrarUsuario" exact component={RegistrarUsuario}></Route>
-            <Route path="/auth/login" exact component={Login}></Route>
-          </Grid>
-        </MuiThemeProvider>
-      </Router>
-    )
-  }
+function App(props) {
+  let firebase = React.useContext(FirebaseContext);
+  const [autenticacionIniciada, setupFirebaseInicial] = React.useState(false);
+
+  useEffect(() => {
+    firebase.estaIniciado().then(val => {
+      setupFirebaseInicial(val);
+    })
+  })
+  //
+  return autenticacionIniciada !== false ? (
+    <Router>
+      <MuiThemeProvider theme={theme}>
+        <AppNavbar></AppNavbar>
+        <Grid container>
+          <Switch>
+            <Route path="/" exact component={ListaItems}></Route>
+          </Switch>
+          <Route path="/auth/registrarUsuario" exact component={RegistrarUsuario}></Route>
+          <Route path="/auth/login" exact component={Login}></Route>
+        </Grid>
+      </MuiThemeProvider>
+    </Router>
+  )
+    : null;
 }
-
 
 export default App;
