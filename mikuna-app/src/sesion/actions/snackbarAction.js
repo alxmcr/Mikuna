@@ -1,6 +1,6 @@
-export const openMessajeShow = (dispatch, openMensaje) => {
+export const openMensajePantalla = (dispatch, openMensaje) => {
     dispatch({
-        type: "OPEN_SNACKBAR",
+        type : "OPEN_SNACKBAR",
         openMensaje: openMensaje
     })
 }
