@@ -60,7 +60,7 @@ class EditarItem extends Component {
         //agregar un nombre dinamico por cada imagen que necesites subir al firestorage
 
         Object.keys(imagenes).forEach(key=>{
-            let codigoDinamico = uuid.v4();
+            let codigoDinamico = uuid();
             let nombreImagen = imagenes[key].name;
             let extension = nombreImagen.split(".").pop();
             imagenes[key].alias = (nombreImagen.split(".")[0]  + "_" + codigoDinamico + "." + extension ).replace(/\s/g,"_").toLowerCase();
@@ -141,7 +141,7 @@ class EditarItem extends Component {
     }
 
     render() {
-        let uniqueID = uuid.v4();
+        let uniqueID = uuid();
 
         return (
             <Container style={style.container}>
