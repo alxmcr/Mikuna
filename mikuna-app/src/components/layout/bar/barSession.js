@@ -161,7 +161,7 @@ class BarSession extends Component {
             <i className="material-icons">menu</i>
           </IconButton>
 
-          <Typography variant="h6">MIKUNA</Typography>
+          <Typography variant="h6">SIPACI</Typography>
           <div className={classes.grow}></div>
           <div className={classes.sectionDesktop}>
             <IconButton color="inherit" component={Link} to="">

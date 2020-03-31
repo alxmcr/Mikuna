@@ -100,7 +100,7 @@ const PerfilUsuario = props => {
     //1. Capturar la imagen
     const foto = fotos[0];
     //2. Renombrar la imagen
-    const claveUnicaFoto = uuid.v4();
+    const claveUnicaFoto = uuid();
     //3. Obtener el nombre de la foto 
     const nombreFoto = foto.name;
     //4. Obtener la extension de la imagen
@@ -136,7 +136,7 @@ const PerfilUsuario = props => {
 
   }
 
-  let fotoKey = uuid.v4();
+  let fotoKey = uuid();
 
   return sesion ? (
     <Container component="main" maxWidth="md" justify="center">
