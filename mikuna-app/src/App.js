@@ -21,6 +21,7 @@ import EditarItem from "./components/views/EditarItem";
 import LoginTelefono from "./components/seguridad/LoginTelefono";
 import ListaUsuarios from "./components/views/ListaUsuarios";
 import NuevoColegio from "./components/views/NuevoColegio";
+import Entregas from "./components/views/Entregas";
 
 import store from "./redux/store";
 import { Provider } from "react-redux";
@@ -119,6 +120,13 @@ function App(props) {
                   path="/listaUsuarios"
                   autenticadoFirebase={firebase.auth.currentUser}
                   component={ListaUsuarios}
+                />
+
+                <RutaAutenticada
+                  exact
+                  path="/entregas"
+                  autenticadoFirebase={firebase.auth.currentUser}
+                  component={Entregas}
                 />
 
                 <Route

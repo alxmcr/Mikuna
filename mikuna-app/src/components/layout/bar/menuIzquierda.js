@@ -26,12 +26,12 @@ export const MenuIzquierda = ({ classes, permisoParaObtenerNotification }) => (
                 <i className="material-icons">add_box</i>
                 <ListItemText classes={{ primary: classes.listItemText }} primary="Nuevo Colegio" />
             </ListItem>
-            <ListItem component={Link} button to="colegios">
+            <ListItem component={Link} button to="/colegios">
                 <i className="material-icons">chrome_reader_mode</i>
                 <ListItemText classes={{ primary: classes.listItemText }} primary="Colegios" />
             </ListItem>
 
-            <ListItem component={Link} button to="">
+            <ListItem component={Link} button to="/entregas">
                 <i className="material-icons">attachment</i>
                 <ListItemText classes={{ primary: classes.listItemText }} primary="Entregas" />
             </ListItem>
@@ -39,11 +39,11 @@ export const MenuIzquierda = ({ classes, permisoParaObtenerNotification }) => (
                 <i className="material-icons">post_add</i>
                 <ListItemText classes={{ primary: classes.listItemText }} primary="Solicitudes" />
             </ListItem>
-            <ListItem component={Link} button to="">
+            <ListItem component={Link} button to="/entregas">
                 <i className="material-icons">list_alt</i>
                 <ListItemText classes={{ primary: classes.listItemText }} primary="Actas" />
             </ListItem>
-            <ListItem component={Link} button to="">
+            <ListItem component={Link} button to="/entregas">
                 <i className="material-icons">description</i>
                 <ListItemText classes={{ primary: classes.listItemText }} primary="Reportes" />
             </ListItem>
