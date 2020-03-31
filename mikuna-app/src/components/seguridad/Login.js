@@ -3,6 +3,11 @@ import { Container, Avatar, Typography, TextField, Button } from '@material-ui/c
 import LockOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
 import { compose } from "recompose";
 import { consumerFirebase } from '../../server';
+import { iniciarSesion } from '../../sesion/actions/sesionAction';
+import { StateContext } from '../../sesion/store';
+import { openMessajeShow } from '../../sesion/actions/snackbarAction';
+
+
 const style = {
     paper: {
         marginTop: 9,
@@ -22,6 +27,8 @@ const style = {
 }
 
 class Login extends Component {
+    static contextType = StateContext;
+
     state = {
         firebase: null,
         usuario: {
@@ -44,18 +51,22 @@ class Login extends Component {
             usuario: usuario
         })
     }
-    login = e => {
+    login = async e => {
         e.preventDefault();
-        const { usuario, firebase } = this.state;
-        firebase.auth
-            .signInWithEmailAndPassword(usuario.email, usuario.password)
-            .then(auth => {
-                this.props.history.push('/')
-            })
-            .catch(error => {
-                console.log("error", error)
-            })
+        const [{ sesion }, dispatch] = this.context;
+        const { firebase, usuario } = this.state;
+        const { email, password } = usuario;
+        let callback = await iniciarSesion(dispatch, firebase, email, password);
+        if (callback.status) {
+            this.props.history.push("/");
+        } else {
+            openMessajeShow(dispatch, {
+                open: true,
+                mensaje: callback.mensaje.message
+            });
+        }
     }
+
     render() {
         return (
             <Container maxWidth="xs">
